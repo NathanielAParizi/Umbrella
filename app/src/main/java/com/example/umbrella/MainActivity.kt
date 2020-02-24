@@ -50,23 +50,25 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun executeAsyncOkHttpCall(zip : String){
+    fun executeAsyncOkHttpCall() {
+
+
+
+//        val url = "https://api.github.com/search/users?q=nathanielaparizi"
+//        val okHttpHelper = OkHttpHelper()
+//        okHttpHelper.makeAsyncApiCall(url)
+
+        var zipcode = editText.text.toString()
+        fullURL = "http://api.openweathermap.org/data/2.5/weather?zip=29229,us&appid=419a8e49d791fce2b59ef848c362df9c"
         val okHttpHelper = OkHttpHelper()
-        okHttpHelper.makeAsyncApiCall(zip)
+        okHttpHelper.makeAsyncApiCall(fullURL)
     }
 
 
     fun onClick(view: View) {
 
-
-        var zipcode = editText.text.toString()
-        fullURL = URL+zipcode+APIKEY
-
-        fullURL = "http://api.openweathermap.org/data/2.5/weather?zip=29229,us&appid=419a8e49d791fce2b59ef848c362df9c"
-        Log.d("TAG","this is the JSON String: " + fullURL)
-
-
-
-        executeAsyncOkHttpCall(fullURL)
+        //  fullURL = "http://api.openweathermap.org/data/2.5/weather?zip=29229,us&appid=419a8e49d791fce2b59ef848c362df9c"
+        Log.d("TAG", "this is the JSON String: " + fullURL)
+        executeAsyncOkHttpCall()
     }
 }
