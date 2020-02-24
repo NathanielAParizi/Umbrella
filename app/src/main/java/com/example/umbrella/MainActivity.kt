@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
 //        okHttpHelper.makeAsyncApiCall(url)
 
         var zipcode = editText.text.toString()
-        fullURL = "http://api.openweathermap.org/data/2.5/weather?zip=29229,us&appid=419a8e49d791fce2b59ef848c362df9c"
+        fullURL = "https://api.openweathermap.org/data/2.5/weather?zip=29229,us&appid=5f82f53a11f5a31bc88b724f36ae4e61"
         val okHttpHelper = OkHttpHelper()
         okHttpHelper.makeAsyncApiCall(fullURL)
     }
